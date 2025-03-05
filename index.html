@@ -319,103 +319,104 @@
     
     <script>
         // Question bank - to be populated later
-        const questionBanks = {
-            civil: [],
-            mechanical: [],
-            electrical: [],
-            computer: [],
-            aerospace: [],
-            chemical: [],
-            environmental: [],
-            biomedical: [],
-            industrial: [],
-            materials: []
-        };
-        
-        // Sample questions for demonstration purposes
-        // These will be replaced with actual questions later
-        function populateSampleQuestions() {
-            // Civil Engineering sample questions
-            questionBanks.civil = [
-                {
-                    question: "What is the primary component of cement?",
-                    options: ["Calcium silicate", "Iron oxide", "Aluminum hydroxide", "Silicon dioxide"],
-                    answer: 0,
-                    explanation: "Calcium silicate is the primary component of Portland cement, making up approximately 70% of its composition."
-                },
-                {
-                    question: "Which of the following is NOT a type of foundation?",
-                    options: ["Pile foundation", "Raft foundation", "Buttress foundation", "Strip foundation"],
-                    answer: 2,
-                    explanation: "Buttress is a type of wall support structure, not a foundation type. The main foundation types include pile, raft, strip, and pad foundations."
-                }
-            ];
-            
-            // Mechanical Engineering sample questions
-            questionBanks.mechanical = [
-                {
-                    question: "What law states that pressure and volume of a gas are inversely proportional at constant temperature?",
-                    options: ["Boyle's Law", "Charles's Law", "Gay-Lussac's Law", "Avogadro's Law"],
-                    answer: 0,
-                    explanation: "Boyle's Law states that at constant temperature, the pressure of a gas is inversely proportional to its volume (P₁V₁ = P₂V₂)."
-                },
-                {
-                    question: "Which type of engine operates on the Otto cycle?",
-                    options: ["Diesel engine", "Gasoline engine", "Stirling engine", "Rocket engine"],
-                    answer: 1,
-                    explanation: "The Otto cycle is the idealized thermodynamic cycle used in spark ignition internal combustion engines, typically gasoline engines."
-                }
-            ];
-            
-            // Electrical Engineering sample questions
-            questionBanks.electrical = [
-                {
-                    question: "What is the unit of electrical resistance?",
-                    options: ["Volt", "Ampere", "Ohm", "Watt"],
-                    answer: 2,
-                    explanation: "The ohm (Ω) is the SI unit of electrical resistance, representing the resistance between two points of a conductor when a constant potential difference of 1 volt produces a current of 1 ampere."
-                },
-                {
-                    question: "Which semiconductor material is most commonly used in electronic devices?",
-                    options: ["Germanium", "Silicon", "Gallium Arsenide", "Copper"],
-                    answer: 1,
-                    explanation: "Silicon is the most commonly used semiconductor material due to its abundance, suitable bandgap, and stable oxide formation capabilities."
-                }
-            ];
-            
-            // Add sample questions for the remaining disciplines
-            questionBanks.computer = [
-                {
-                    question: "What is the time complexity of binary search?",
-                    options: ["O(n)", "O(n log n)", "O(log n)", "O(n²)"],
-                    answer: 2,
-                    explanation: "Binary search has a time complexity of O(log n) because it divides the search interval in half with each comparison."
-                },
-                {
-                    question: "Which of the following is not a valid data structure?",
-                    options: ["Stack", "Queue", "Tree", "Recursive Array"],
-                    answer: 3,
-                    explanation: "'Recursive Array' is not a standard data structure. The others—Stack, Queue, and Tree—are all valid and commonly used data structures."
-                }
-            ];
-            
-            // Add a few more questions to each discipline to meet minimum requirements
-            for (let topic in questionBanks) {
-                for (let i = 1; i <= 10; i++) {
-                    if (questionBanks[topic].length < 10) {
-                        questionBanks[topic].push({
-                            question: `Sample ${topic} question ${i + 2}`,
-                            options: ["Option A", "Option B", "Option C", "Option D"],
-                            answer: Math.floor(Math.random() * 4),
-                            explanation: "Sample explanation for this question."
-                        });
-                    }
-                }
-            }
+       const questionBanks = {
+    mechanical: [
+        {
+            question: "Which law states that the force applied to an object is equal to its mass multiplied by its acceleration?",
+            options: ["Newton's First Law", "Newton's Second Law", "Newton's Third Law", "Law of Conservation of Energy"],
+            answer: 1
+        },
+        {
+            question: "What is the primary function of a flywheel in an engine?",
+            options: ["Store energy", "Reduce friction", "Increase torque", "Regulate fuel flow"],
+            answer: 0
         }
-        
-        // Populate sample questions for demonstration
-        populateSampleQuestions();
+    ],
+    electrical: [
+        {
+            question: "What is the SI unit of electrical resistance?",
+            options: ["Volt", "Ohm", "Ampere", "Watt"],
+            answer: 1
+        },
+        {
+            question: "Which component is used to store electrical energy in a circuit?",
+            options: ["Resistor", "Inductor", "Capacitor", "Diode"],
+            answer: 2
+        }
+    ],
+    civil: [
+        {
+            question: "What is the primary component of concrete?",
+            options: ["Cement", "Sand", "Gravel", "Water"],
+            answer: 0
+        },
+        {
+            question: "Which structure helps in carrying water across a valley or road?",
+            options: ["Dam", "Bridge", "Aqueduct", "Tunnel"],
+            answer: 2
+        }
+    ],
+    chemical: [
+        {
+            question: "What is the most common element in Earth's crust?",
+            options: ["Oxygen", "Silicon", "Aluminum", "Iron"],
+            answer: 0
+        },
+        {
+            question: "Which law states that mass is neither created nor destroyed in a chemical reaction?",
+            options: ["Boyle’s Law", "Charles’ Law", "Law of Conservation of Mass", "Avogadro’s Law"],
+            answer: 2
+        }
+    ],
+    software: [
+        {
+            question: "Which programming language is widely used for web development?",
+            options: ["Python", "JavaScript", "C++", "Java"],
+            answer: 1
+        },
+        {
+            question: "What does 'HTML' stand for?",
+            options: ["HyperText Markup Language", "High-Level Text Machine Learning", "Hyperlink Text Management Language", "High Transfer Machine Logic"],
+            answer: 0
+        }
+    ],
+    aerospace: [
+        {
+            question: "What force counteracts gravity in an aircraft?",
+            options: ["Thrust", "Drag", "Lift", "Weight"],
+            answer: 2
+        },
+        {
+            question: "Which gas is primarily used in space shuttles for combustion?",
+            options: ["Oxygen", "Nitrogen", "Hydrogen", "Helium"],
+            answer: 2
+        }
+    ],
+    biomedical: [
+        {
+            question: "Which medical imaging technique uses magnetic fields and radio waves?",
+            options: ["X-ray", "CT Scan", "MRI", "Ultrasound"],
+            answer: 2
+        },
+        {
+            question: "What is the primary function of a pacemaker?",
+            options: ["Regulate heart rate", "Measure blood pressure", "Monitor oxygen levels", "Stimulate muscle growth"],
+            answer: 0
+        }
+    ],
+    environmental: [
+        {
+            question: "Which gas is the primary contributor to global warming?",
+            options: ["Oxygen", "Carbon Dioxide", "Nitrogen", "Argon"],
+            answer: 1
+        },
+        {
+            question: "What process is used to convert wastewater into reusable water?",
+            options: ["Desalination", "Recycling", "Wastewater Treatment", "Filtration"],
+            answer: 2
+        }
+    ]
+};
         
         // Quiz state
         let currentQuiz = {
